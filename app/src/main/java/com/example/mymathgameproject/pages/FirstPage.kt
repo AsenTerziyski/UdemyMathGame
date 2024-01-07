@@ -1,4 +1,4 @@
-package com.example.mymathgameproject
+package com.example.mymathgameproject.pages
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,18 +26,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.example.mymathgameproject.R
+import com.example.mymathgameproject.SystemBarHelper
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FirstPage(navController: NavController) {
 
-    val systemUIController = rememberSystemUiController()
-    systemUIController.setSystemBarsColor(
-        color = colorResource(id = R.color.green)
-    )
-
-
+    SystemBarHelper.setColor()
 
     Scaffold(
         topBar = {
@@ -66,7 +62,7 @@ fun FirstPage(navController: NavController) {
 
                 Button(
                     onClick = {
-                        navController.navigate("SecondPage/add")
+                        navController.navigate(AppPages.SECOND_PAGE.page + "/add")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.green)
@@ -83,7 +79,7 @@ fun FirstPage(navController: NavController) {
 
                 Button(
                     onClick = {
-                        navController.navigate("SecondPage/sub")
+                        navController.navigate(AppPages.SECOND_PAGE.page + "/sub")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.green)
@@ -100,7 +96,7 @@ fun FirstPage(navController: NavController) {
 
                 Button(
                     onClick = {
-                        navController.navigate("SecondPage/multi")
+                        navController.navigate(AppPages.SECOND_PAGE.page + "/multi")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.green)
@@ -117,7 +113,7 @@ fun FirstPage(navController: NavController) {
 
                 Button(
                     onClick = {
-                        navController.navigate("SecondPage/div")
+                        navController.navigate(AppPages.SECOND_PAGE.page + "/div")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.green)
