@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.mymathgameproject.R
 import com.example.mymathgameproject.SystemBarHelper
+import com.example.mymathgameproject.TextForQuestion
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,6 +53,9 @@ fun SecondPage(navController: NavController, category: String) {
         mutableStateOf("30")
     }
 
+    val myQuestion = remember {
+        mutableStateOf("")
+    }
 
 
     Scaffold(
@@ -98,6 +102,7 @@ fun SecondPage(navController: NavController, category: String) {
                     .padding(it)
             ) {
                 Spacer(modifier = Modifier.size(30.dp))
+
                 Row(
                     modifier = Modifier.fillMaxSize(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -114,6 +119,7 @@ fun SecondPage(navController: NavController, category: String) {
                         color = Color.White
                     )
                 }
+//                TextForQuestion(text = myQuestion.value)
             }
         }
     )
